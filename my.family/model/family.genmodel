@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/my.family/src" modelPluginID="my.family" modelName="Family"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>family.ecore</foreignModel>
+  <genPackages prefix="Family" basePackage="com.phungkhac" disposableProviderFactory="true"
+      ecorePackage="family.ecore#/">
+    <genClasses image="false" ecoreClass="family.ecore#//FNamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute family.ecore#//FNamedElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="family.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute family.ecore#//Person/age"/>
+    </genClasses>
+    <genClasses ecoreClass="family.ecore#//Family">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference family.ecore#//Family/members"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference family.ecore#//Family/father"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference family.ecore#//Family/mother"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference family.ecore#//Family/children"/>
+    </genClasses>
+    <genClasses ecoreClass="family.ecore#//Father">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference family.ecore#//Father/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference family.ecore#//Father/wife"/>
+    </genClasses>
+    <genClasses ecoreClass="family.ecore#//Mother">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference family.ecore#//Mother/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference family.ecore#//Mother/husband"/>
+    </genClasses>
+    <genClasses ecoreClass="family.ecore#//Child">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference family.ecore#//Child/mother"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference family.ecore#//Child/father"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
